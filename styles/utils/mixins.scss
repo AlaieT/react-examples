@@ -1,0 +1,17 @@
+@mixin flex($type, $direction) {
+  display: flex;
+
+  @if ($direction == "col") {
+    flex-direction: column;
+  }
+
+  @if ($type == "center&center") {
+    justify-content: center;
+    align-items: center;
+  }
+
+  @if ($type == "start&center") {
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
