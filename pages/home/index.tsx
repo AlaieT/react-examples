@@ -7,37 +7,37 @@ const Home = () => {
   return (
     <main className={styles.container}>
       <div className={styles.title}>
-        <p>
+        <h1>
           <span>React.</span>Examples
-        </p>
-        <p>
+        </h1>
+        <h2>
           Make your journey in world of react simpler with a lot of real-life
           examples!
-        </p>
+        </h2>
       </div>
       <div className={styles.features}>
-        <div className={styles.item}>
-          <label>01.Simple</label>
+        <section>
+          <h3>Simple</h3>
           <p>Each of examples made as simple as possible.</p>
-        </div>
-        <div className={styles.item}>
-          <label>02.Clean</label>
+        </section>
+        <section>
+          <h3>Clean</h3>
           <p>
             There is no external packages except react and testing-libraries.
           </p>
-        </div>
-        <div className={styles.item}>
-          <label>03.Real</label>
+        </section>
+        <section>
+          <h3>Real</h3>
           <p>Examples are made with a focus on real-life projects.</p>
-        </div>
-        <div className={styles.item}>
-          <label>04.Informative</label>
+        </section>
+        <section>
+          <h3>Informative</h3>
           <p>We provide description and explanation for each of examples.</p>
-        </div>
+        </section>
       </div>
-      <div className={styles.start}>
-        <Link href={"/examples/introduction"}>Gettin Started!</Link>
-      </div>
+      <Link href={"/examples/introduction"} className={styles.start}>
+        Getting Started!
+      </Link>
     </main>
   );
 };
