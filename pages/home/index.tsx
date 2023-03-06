@@ -5,7 +5,7 @@ import styles from "../../styles/pages/home.module.scss";
 
 const Home = () => {
   return (
-    <main className={styles.container}>
+    <div className={styles.container}>
       <div className={styles.title}>
         <h1>
           <span>React.</span>Examples
@@ -38,7 +38,7 @@ const Home = () => {
       <Link href={"/examples/introduction"} className={styles.start}>
         Getting Started!
       </Link>
-    </main>
+    </div>
   );
 };
 

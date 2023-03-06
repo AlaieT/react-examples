@@ -1,5 +1,10 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { Roboto } from "next/font/google";
+
+import styles from "../../styles/components/layout.module.scss";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -7,6 +12,12 @@ const roboto = Roboto({
 });
 
 const Layout = ({ children }: React.PropsWithChildren) => {
+  const router = useRouter();
+
+  const getBaseRoute = (name: string): boolean => {
+    return router.pathname.includes(name);
+  };
+
   return (
     <>
       <style jsx global>{`
@@ -32,7 +43,40 @@ const Layout = ({ children }: React.PropsWithChildren) => {
           height: 100%;
         }
       `}</style>
-      {children}
+      <header id={styles.global_header}>
+        <div className={styles.left}>
+          <Image
+            src="/icon_react.svg"
+            width={24}
+            height={24}
+            alt="react icon"
+          />
+          <Link href={"/"}>React.Examples</Link>
+        </div>
+        <div className={styles.right}>
+          <nav>
+            <Link
+              href={"/introdution"}
+              className={getBaseRoute("/introduction") && styles.active}
+            >
+              Introduction
+            </Link>
+            <Link
+              href={"/examples/basic"}
+              className={getBaseRoute("/examples/basic") && styles.active}
+            >
+              Basic
+            </Link>
+            <Link
+              href={"/examples/advanced"}
+              className={getBaseRoute("/examples/advanced") && styles.active}
+            >
+              Advanced
+            </Link>
+          </nav>
+        </div>
+      </header>
+      <main id={styles.global_main}>{children}</main>
     </>
   );
 };
