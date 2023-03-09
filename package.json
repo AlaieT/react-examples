@@ -1,6 +1,11 @@
 {
   "name": "react-examples",
   "version": "0.0.1",
+  "browserslist": [
+    ">0.3%",
+    "not dead",
+    "not op_mini all"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

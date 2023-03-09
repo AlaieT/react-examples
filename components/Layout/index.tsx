@@ -20,56 +20,66 @@ const Layout = ({ children }: React.PropsWithChildren) => {
 
   return (
     <>
-      <style jsx global>{`
-        * {
-          box-sizing: border-box;
-          outline: none;
-          margin: 0;
-          padding: 0;
-        }
+      <style jsx global>
+        {`
+          * {
+            box-sizing: border-box;
+            outline: none;
+            margin: 0;
+            padding: 0;
+          }
 
-        html {
-          width: 100%;
-          height: 100%;
+          html {
+            width: 100%;
+            height: 100%;
 
-          font-family: ${roboto.style.fontFamily};
-          font-size: 14px;
-          font-weight: 300;
-        }
+            font-family: ${roboto.style.fontFamily};
+            font-size: 14px;
+            font-weight: 300;
+          }
 
-        body,
-        div[id="__next"] {
-          width: 100%;
-          height: 100%;
-        }
-      `}</style>
+          body,
+          div[id="__next"] {
+            width: 100%;
+            height: 100%;
+          }
+        `}
+      </style>
       <header id={styles.global_header}>
-        <div className={styles.left}>
+        <Link href={"/"} className={styles.left}>
           <Image
             src="/icon_react.svg"
             width={24}
             height={24}
             alt="react icon"
           />
-          <Link href={"/"}>React.Examples</Link>
-        </div>
+          <span>React.Examples</span>
+        </Link>
         <div className={styles.right}>
           <nav>
             <Link
+              href={"/"}
+              className={getBaseRoute("/") ? styles.active : null}
+            >
+              Home
+            </Link>
+            <Link
               href={"/introdution"}
-              className={getBaseRoute("/introduction") && styles.active}
+              className={getBaseRoute("/introduction") ? styles.active : null}
             >
               Introduction
             </Link>
             <Link
               href={"/examples/basic"}
-              className={getBaseRoute("/examples/basic") && styles.active}
+              className={getBaseRoute("/examples/basic") ? styles.active : null}
             >
               Basic
             </Link>
             <Link
               href={"/examples/advanced"}
-              className={getBaseRoute("/examples/advanced") && styles.active}
+              className={
+                getBaseRoute("/examples/advanced") ? styles.active : null
+              }
             >
               Advanced
             </Link>
@@ -77,6 +87,20 @@ const Layout = ({ children }: React.PropsWithChildren) => {
         </div>
       </header>
       <main id={styles.global_main}>{children}</main>
+      <footer id={styles.global_footer}>
+        <a
+          href="https://github.com/AlaieT/react-examples"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <Image
+            src={"/icon_github.svg"}
+            width={48}
+            height={48}
+            alt="github icon"
+          />
+        </a>
+      </footer>
     </>
   );
 };
