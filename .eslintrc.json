@@ -4,13 +4,15 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["eslint:recommended", "next"],
+  "extends": ["eslint:recommended"],
   "overrides": [
     {
       "files": "**/*.+(ts|tsx)",
       "extends": [
+        "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "next"
       ],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {

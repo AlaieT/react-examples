@@ -5,8 +5,8 @@ import styles from "../../styles/pages/home.module.scss";
 
 const Home = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.title}>
+    <div id={styles.container}>
+      <div id={styles.title}>
         <h1>
           <span>React.</span>Examples
         </h1>
@@ -15,7 +15,7 @@ const Home = () => {
           examples!
         </h2>
       </div>
-      <div className={styles.features}>
+      <div id={styles.features}>
         <section>
           <h3>Simple</h3>
           <p>Each of examples made as simple as possible.</p>
@@ -35,7 +35,7 @@ const Home = () => {
           <p>We provide description and explanation for each of examples.</p>
         </section>
       </div>
-      <Link href={"/examples/introduction"} className={styles.start}>
+      <Link href={"/examples/introduction"} id={styles.start}>
         Getting Started!
       </Link>
     </div>

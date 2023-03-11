@@ -43,10 +43,14 @@ const Layout = ({ children }: React.PropsWithChildren) => {
             width: 100%;
             height: 100%;
           }
+
+          a {
+            text-decoration: none;
+          }
         `}
       </style>
       <header id={styles.global_header}>
-        <Link href={"/"} className={styles.left}>
+        <Link href={"/"} id={styles.left}>
           <Image
             src="/icon_react.svg"
             width={24}
@@ -55,7 +59,7 @@ const Layout = ({ children }: React.PropsWithChildren) => {
           />
           <span>React.Examples</span>
         </Link>
-        <div className={styles.right}>
+        <div id={styles.right}>
           <nav>
             <Link
               href={"/"}
@@ -64,24 +68,10 @@ const Layout = ({ children }: React.PropsWithChildren) => {
               Home
             </Link>
             <Link
-              href={"/introdution"}
+              href={"/introduction"}
               className={getBaseRoute("/introduction") ? styles.active : null}
             >
-              Introduction
-            </Link>
-            <Link
-              href={"/examples/basic"}
-              className={getBaseRoute("/examples/basic") ? styles.active : null}
-            >
-              Basic
-            </Link>
-            <Link
-              href={"/examples/advanced"}
-              className={
-                getBaseRoute("/examples/advanced") ? styles.active : null
-              }
-            >
-              Advanced
+              Examples
             </Link>
           </nav>
         </div>
