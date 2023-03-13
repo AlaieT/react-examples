@@ -1,0 +1,24 @@
+.button {
+  cursor: pointer;
+
+  width: max-content;
+  padding: 0.375rem 0.5rem;
+
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.75;
+
+  outline: 0;
+  border: 0 none;
+  border-radius: 0.5rem;
+
+  background-color: #5c84fd;
+
+  &.reset {
+    background-color: #fdba5c;
+  }
+
+  &.submit {
+    background-color: #d75cfd;
+  }
+}
