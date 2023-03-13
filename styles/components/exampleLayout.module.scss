@@ -1,0 +1,127 @@
+@import "../utils/variables.scss";
+@import "../utils/mixins.scss";
+
+%shared-nav {
+  position: sticky;
+  top: 4rem;
+
+  height: calc(100vh - 4rem);
+
+  overflow-y: scroll;
+}
+
+%shared-a {
+  padding: 0.25rem 0 0.25rem 0;
+
+  color: black;
+
+  display: block;
+}
+
+#section_nav {
+  width: 16rem;
+
+  border-right: 1px solid rgb(240, 240, 240);
+
+  flex: none;
+
+  & nav {
+    @extend %shared-nav;
+
+    padding: 1.5rem 1rem 0 1.5rem;
+
+    & ul {
+      list-style: none;
+
+      & li {
+        margin-bottom: 1.25rem;
+
+        & h3 {
+          font-weight: 500;
+          line-height: 1.75;
+
+          border-bottom: 1px solid black;
+        }
+
+        & a {
+          @extend %shared-a;
+
+          margin: 0.25rem 0;
+          padding-left: 1.5rem;
+
+          transition: 175ms cubic-bezier(0.47, 0, 0.745, 0.715);
+
+          &#active {
+            pointer-events: none;
+            background-color: black;
+            color: white;
+          }
+
+          &:hover {
+            background-color: rgb(240, 240, 240);
+
+            transition: 175ms cubic-bezier(0.47, 0, 0.745, 0.715);
+          }
+        }
+      }
+    }
+  }
+}
+
+#content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem 0 0 0;
+
+  @include flex("start&center", "col");
+}
+
+#page_nav {
+  width: 16rem;
+
+  flex: none;
+
+  & nav {
+    @extend %shared-nav;
+
+    padding: 1.5rem 1.5rem 0 0;
+
+    & label {
+      margin-bottom: 0.5rem;
+      padding-left: 0.5rem;
+
+      font-weight: 500;
+
+      border-left: 1px solid transparent;
+
+      @include flex("start&center", "");
+    }
+
+    & h4 {
+      margin: 0.5rem 0;
+
+      font-weight: inherit;
+
+      & a {
+        @extend %shared-a;
+
+        padding-left: 0.5rem;
+
+        color: #b5b5b5;
+
+        border-left: 1px solid transparent;
+
+        transition: 175ms cubic-bezier(0.47, 0, 0.745, 0.715);
+
+        &.active,
+        &:hover {
+          color: black;
+          border-left: 1px solid black;
+
+          transition: 175ms cubic-bezier(0.47, 0, 0.745, 0.715);
+        }
+      }
+    }
+  }
+}

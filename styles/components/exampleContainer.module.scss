@@ -1,0 +1,15 @@
+@import "../utils/variables.scss";
+@import "../utils/mixins.scss";
+
+#container{
+    width: 100%;
+    min-width: 600px;
+    padding: 2rem 2rem;
+
+    border: 1px solid #bababa;
+    border-radius: 0.5rem;
+
+    @include flex("center&center", "col");
+
+    row-gap: 1.5rem;
+}
