@@ -70,9 +70,7 @@
 }
 
 #global_main {
-  min-height: calc(100% - 4rem);
-
-  @include flex("center&center", "");
+  @include flex("center&start", "");
 }
 
 #global_footer {

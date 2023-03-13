@@ -1,13 +1,13 @@
 @import "../utils/variables.scss";
 @import "../utils/mixins.scss";
 
-.container {
+#container {
   padding: 0 1.5rem 0 1.5rem;
   height: 100%;
 
   @include flex("center&center", "col");
 
-  .title {
+  & #title {
     margin: 0 0 4rem 0;
 
     text-align: center;
@@ -28,10 +28,10 @@
     }
   }
 
-  .features {
+  & #features {
     margin: 0 0 4rem 0;
 
-    @include flex("center&center", "");
+    @include flex("center&start", "");
 
     flex-wrap: wrap;
 
@@ -66,7 +66,7 @@
     }
   }
 
-  .start {
+  & #start {
     padding: 0.5rem 6rem 0.5rem 6rem;
 
     border-bottom: 1px solid black;

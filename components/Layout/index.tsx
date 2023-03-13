@@ -14,10 +14,6 @@ const roboto = Roboto({
 const Layout = ({ children }: React.PropsWithChildren) => {
   const router = useRouter();
 
-  const getBaseRoute = (name: string): boolean => {
-    return router.pathname.includes(name);
-  };
-
   return (
     <>
       <style jsx global>
@@ -62,14 +58,14 @@ const Layout = ({ children }: React.PropsWithChildren) => {
         <div id={styles.right}>
           <nav>
             <Link
-              href={"/"}
-              className={getBaseRoute("/") ? styles.active : null}
+              href={"/home"}
+              className={router.pathname === "/home" ? styles.active : null}
             >
               Home
             </Link>
             <Link
               href={"/introduction"}
-              className={getBaseRoute("/introduction") ? styles.active : null}
+              className={router.pathname !== "/home" ? styles.active : null}
             >
               Examples
             </Link>
